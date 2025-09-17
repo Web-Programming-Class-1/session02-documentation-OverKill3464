@@ -20,7 +20,7 @@ Route::put('/update', function () {
     return 'Profile UPDATED';
 });
 Route::delete('/remove', function () {
-    return 'Profil REMOVED';
+    return 'Profile REMOVED';
 });
 
 Route::post('/submit', function () {
@@ -28,7 +28,7 @@ Route::post('/submit', function () {
 });
 
 // 2.2 Route Group
-// admin page -> view student page, view leture page, view employ page
+// admin page -> view student page, view lecture page, view employ page
 
 Route::prefix('admin')->group(function () {
     Route::get('/admin', function () {
@@ -74,13 +74,13 @@ Route::get("/users", function () {
     return view("users", ["name" => "Jonathan Smith", "age" => 33]);
 });
 
-// 2.6 Route Paramerters { so we will get the data from the url directly }
+// 2.6 Route Parameters { so we will get the data from the url directly }
 // profile 1
 Route::get("/profile/{username}", function ($username) {
     return view("profile", ["name" => $username]);
 });
 
-// 2.7 Route Falback
+// 2.7 Route Fallback
 Route::fallback(function () {
     return response()->view(('fallback'), [], 404);
 });
